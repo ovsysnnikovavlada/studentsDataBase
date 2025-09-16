@@ -70,6 +70,8 @@ int main() {
         std::cout << "Меню:\n";
         std::cout << "1. Добавить студента\n";
         std::cout << "2. Вывести список студентов\n";
+        // Добавленный пункт - 3
+        std::cout << "3. Вывести список студентов (в алфавитном порядке)\n";
         std::cout << "0. Выход\n";
         std::cout << "Выберите действие: ";
         std::cin >> choice;
@@ -80,6 +82,10 @@ int main() {
                 break;
             case 2:
                 displayStudents(database);
+                break;
+            // Добавленный кейс
+            case 3:
+                displayStudentsSorted(database);
                 break;
             case 0:
                 std::cout << "Выход из программы.\n";
