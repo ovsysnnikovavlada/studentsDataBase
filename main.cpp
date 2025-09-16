@@ -36,6 +36,11 @@ void displayStudents(const std::vector<Student>& database) {
     }
 }
 
+// Функция для сравнения студентов по имени (для сортировки)
+bool compareStudentsByName(const Student& a, const Student& b) {
+    return a.name < b.name;
+}
+
 int main() {
     std::vector<Student> database;
 
