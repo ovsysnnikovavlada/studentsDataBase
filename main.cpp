@@ -42,6 +42,11 @@ void displayStudents(const std::vector<Student>& database) {
     }
 }
 
+// Функция вывода сепараторов
+void printSeparator() {
+    std::cout << "----------------------------------------\n";
+}
+
 // Функция для сравнения студентов по имени (для сортировки)
 bool compareStudentsByName(const Student& a, const Student& b) {
     return a.name < b.name;
@@ -58,7 +63,10 @@ void displayStudentsSorted(std::vector<Student>& database) {
     std::vector<Student> sortedDatabase = database;
     std::sort(sortedDatabase.begin(), sortedDatabase.end(), compareStudentsByName);
     
+    printSeparator();
     std::cout << "Список студентов в алфавитном порядке:\n";
+    printSeparator();
+
     for (const Student& student : sortedDatabase) {
         std::cout << "Имя: " << student.name << "\n";
         std::cout << "Возраст: " << student.age << "\n";
@@ -76,11 +84,12 @@ int main() {
         std::cout << "1. Добавить студента\n";
         std::cout << "2. Вывести список студентов\n";
         // Добавленный пункт - 3
-        std::cout << "3. Вывести список студентов (в алфавитном порядке)\n";
+        std::cout << "3. Вывести список студентов в алфавитном порядке\n";
         std::cout << "0. Выход\n";
         std::cout << "Выберите действие: ";
         std::cin >> choice;
-
+        printSeparator();
+        
         switch (choice) {
             case 1:
                 addStudent(database);
