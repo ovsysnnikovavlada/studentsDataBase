@@ -2,7 +2,7 @@
 #include <student.h>
 #include <main.cpp>
 #include <algorithm>
-#include <googletest-main/googletest/include/gtest/gtest.h>
+#include <gtest/gtest.h>
 
 // Тесты
 // Тестируем добавление студента в базу данных
