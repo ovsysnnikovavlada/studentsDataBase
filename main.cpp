@@ -1,7 +1,9 @@
+#include <student.h>
 #include <iostream>
 #include <vector>
 #include <string>
 #include <algorithm> 
+#include <vector>
 
 struct Student {
     std::string name;
@@ -89,7 +91,7 @@ int main() {
         std::cout << "Выберите действие: ";
         std::cin >> choice;
         printSeparator();
-        
+
         switch (choice) {
             case 1:
                 addStudent(database);
