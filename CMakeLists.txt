@@ -19,3 +19,7 @@ add_executable(studentsDataBase main.cpp)
 # Тесты
 add_executable(tests tests.cpp)
 target_link_libraries(tests gtest_main)
+
+# Указываем где искать заголовочные файлы для всех таргетов
+target_include_directories(studentsDataBase PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
