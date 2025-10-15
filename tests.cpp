@@ -1,8 +1,7 @@
-#define UNIT_TESTS
 #include "student.h"
-#include <main.cpp>
-#include <algorithm>
 #include <gtest/gtest.h>
+#include <vector>
+#include <algorithm>
 
 // Тесты
 // Тестируем добавление студента в базу данных
