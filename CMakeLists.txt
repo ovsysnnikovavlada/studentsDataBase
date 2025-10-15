@@ -3,6 +3,9 @@ project(studentsDataBase)
 
 set(CMAKE_CXX_STANDARD 17)
 
+# ВКЛЮЧАЕМ ПОДДЕРЖКУ CTEST
+include(CTest)
+
 include(FetchContent)
 
 # Подтягиваем GoogleTest из интернета
@@ -19,7 +22,8 @@ add_executable(studentsDataBase main.cpp)
 # Тесты
 add_executable(tests tests.cpp)
 target_link_libraries(tests gtest_main)
-
-# Указываем где искать заголовочные файлы для всех таргетов
-target_include_directories(studentsDataBase PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories(tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+
+# РЕГИСТРИРУЕМ ТЕСТЫ ДЛЯ CTEST
+enable_testing()
+add_test(NAME StudentDatabaseTests COMMAND tests)
