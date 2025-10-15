@@ -17,13 +17,15 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 # Основной проект
-add_executable(studentsDataBase main.cpp)
+add_executable(studentsDataBase main.cpp student.cpp)
 
 # Тесты
-add_executable(tests tests.cpp)
+add_executable(tests tests.cpp student.cpp)
 target_link_libraries(tests gtest_main)
 target_include_directories(tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 # РЕГИСТРИРУЕМ ТЕСТЫ ДЛЯ CTEST
 enable_testing()
 add_test(NAME StudentDatabaseTests COMMAND tests)
+
+
