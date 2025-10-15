@@ -2,6 +2,8 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <iostream>
+#include <algorithm>
 
 struct Student {
     std::string name;
@@ -10,8 +12,12 @@ struct Student {
     double gpa;
 };
 
+inline bool compareStudentsByName(const Student& a, const Student& b) {
+    return a.name < b.name;
+}
+
+// Объявления других функций...
 void addStudent(std::vector<Student>& database);
 void displayStudents(const std::vector<Student>& database);
 void printSeparator();
-bool compareStudentsByName(const Student& a, const Student& b);
 void displayStudentsSorted(std::vector<Student>& database);
