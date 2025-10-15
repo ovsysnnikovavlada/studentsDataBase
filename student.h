@@ -2,8 +2,6 @@
 #pragma once
 #include <string>
 #include <vector>
-#include <iostream>
-#include <algorithm>
 
 struct Student {
     std::string name;
@@ -12,8 +10,9 @@ struct Student {
     double gpa;
 };
 
-// Объявления других функций...
+// Добавьте объявление compareStudentsByName
+bool compareStudentsByName(const Student& a, const Student& b);
+void printSeparator();
 void addStudent(std::vector<Student>& database);
 void displayStudents(const std::vector<Student>& database);
-void printSeparator();
 void displayStudentsSorted(std::vector<Student>& database);
