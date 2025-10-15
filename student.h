@@ -12,10 +12,6 @@ struct Student {
     double gpa;
 };
 
-inline bool compareStudentsByName(const Student& a, const Student& b) {
-    return a.name < b.name;
-}
-
 // Объявления других функций...
 void addStudent(std::vector<Student>& database);
 void displayStudents(const std::vector<Student>& database);
